@@ -76,7 +76,7 @@
                 android:text="Email address"
                 android:alpha="0.7"
                 android:textStyle="bold"
-                android:labelFor="@id/EditText1"/>
+                android:labelFor="@+id/EditText1"/>
 
             <EditText
                 android:id="@+id/EditText1"

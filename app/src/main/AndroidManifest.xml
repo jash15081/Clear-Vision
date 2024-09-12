@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dadu"
         tools:targetApi="31">
+
+
         <activity
             android:name=".ForgotMyPassword"
             android:exported="false" />
