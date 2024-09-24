@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.core.view.ViewCompat;
 import android.widget.CheckBox;
 import androidx.core.view.WindowInsetsCompat;
+import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,22 +44,24 @@ public class MainActivity extends AppCompatActivity {
         signupButton = findViewById(R.id.signup_button);
         rememberMeCheckBox = findViewById(R.id.CheckBox1);
 
+//        login information remember
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        boolean isLoggedIn = sharedPreferences.getBoolean("logged_in", false);
 
-      //  SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
-        //boolean isLoggedIn = sharedPreferences.getBoolean("logged_in", false);
-
-        //if (isLoggedIn) {
-          //  Intent intent = new Intent(MainActivity.this, Maininterface.class);
-           // startActivity(intent);
-            //finish();
-           // return;
-        //}
+        if (isLoggedIn) {
+            Intent intent = new Intent(MainActivity.this, Maininterface.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
+
+
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(MainActivity.this, "Please enter your email", Toast.LENGTH_SHORT).show();
@@ -81,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.apply();
                     }
                     Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, Maininterface.class);
+                    Intent intent=new Intent(MainActivity.this , SplashActivity.class);
                     startActivity(intent);
                     finish();
                 } else {

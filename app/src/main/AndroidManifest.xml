@@ -12,8 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dadu"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".pendingorder"
+            android:exported="false" />
+        <activity
+            android:name=".ui.OrderDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.PendingOrdersActivity"
+            android:exported="false" /> <!-- Remove or correct this meta-data reference -->
+        <!-- If you don't need it, remove it -->
+        <!--
+<meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/strings" />
+        -->
+        <activity
+            android:name=".LanguageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="false" />
         <activity
             android:name=".ForgotMyPassword"
             android:exported="false" />

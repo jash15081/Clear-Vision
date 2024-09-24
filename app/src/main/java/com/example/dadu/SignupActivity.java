@@ -2,6 +2,7 @@ package com.example.dadu;
 
 import static com.example.dadu.R.*;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
@@ -25,8 +26,10 @@ public class SignupActivity extends AppCompatActivity {
     private EditText passwordEditText;
     private EditText retypePasswordEditText;
     private EditText birthdateEditText;
+    private EditText hintEditText;
     private Button signupButton;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +47,7 @@ public class SignupActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.EditText2);
         retypePasswordEditText = findViewById(R.id.signup_retype_password);
         birthdateEditText = findViewById(R.id.signup_birthdate);
+        hintEditText = findViewById(id.hintq);
         signupButton = findViewById(R.id.signup_button);
 
 
@@ -55,6 +59,7 @@ public class SignupActivity extends AppCompatActivity {
                 String password = passwordEditText.getText().toString().trim();
                 String retypePassword = retypePasswordEditText.getText().toString().trim();
                 String birthdate = birthdateEditText.getText().toString().trim();
+                String hint = hintEditText.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(SignupActivity.this, "Please enter your email", Toast.LENGTH_SHORT).show();
