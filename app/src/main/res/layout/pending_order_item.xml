@@ -1,0 +1,88 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    android:layout_marginBottom="8dp">
+
+    <!-- Order ID -->
+    <TextView
+        android:id="@+id/tvOrderID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order ID: 123456"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Specs Details -->
+    <TextView
+        android:id="@+id/tvSpecsDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Specs: Blue Frame, Anti-glare Lenses"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvOrderID"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Order Date -->
+    <TextView
+        android:id="@+id/tvOrderDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Date: 2024-09-20"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvSpecsDetails"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Delivery Date -->
+    <TextView
+        android:id="@+id/tvDeliveryDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delivery Date: 2024-09-30"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvOrderDate"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Status -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status: Pending Payment"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvDeliveryDate"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Pending Payment -->
+    <TextView
+        android:id="@+id/tvPendingPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pending Payment: $120.00"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvStatus"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Make Payment Button -->
+    <Button
+        android:id="@+id/btnMakePayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make Payment"
+        app:layout_constraintTop_toBottomOf="@id/tvPendingPayment"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="visible"/>
+
+    <!-- Cancel Order Button -->
+    <Button
+        android:id="@+id/btnCancelOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel Order"
+        app:layout_constraintTop_toBottomOf="@id/btnMakePayment"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
