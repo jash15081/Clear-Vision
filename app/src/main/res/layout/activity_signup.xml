@@ -1,13 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
     android:background="@drawable/background2"
-    android:id="@id/card_view"
-
     tools:context=".SignupActivity">
 
     <RelativeLayout
@@ -21,7 +18,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:layout_above="@id/card_view"
         android:padding="28dp">
 
         <ImageView
@@ -36,7 +32,7 @@
             android:textStyle="bold"
             android:fontFamily="sans-serif-medium"
             android:textSize="32sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -51,7 +47,8 @@
             android:layout_width="match_parent"
             android:layout_height="700dp"
             android:orientation="vertical"
-            android:padding="28dp">
+            android:padding="28dp"
+            tools:ignore="ExtraText">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -72,10 +69,12 @@
                 android:id="@+id/emailLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.7"
-                android:labelFor="@id/EditText1"
                 android:text="Email address"
-                android:textStyle="bold" />
+                android:alpha="0.7"
+                android:textStyle="bold"
+                android:labelFor="@+id/EditText1"/> <!-- Corrected the labelFor ID -->
+
+
 
             <EditText
                 android:id="@+id/EditText1"
@@ -84,10 +83,8 @@
                 android:drawableEnd="@drawable/done_icon"
                 android:hint="Ex:- abc@gmail.com"
                 android:inputType="textEmailAddress"
-
                 android:minHeight="48dp"
                 android:padding="8dp" />
-
 
             <View
                 android:layout_width="wrap_content"
@@ -98,9 +95,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
-                android:labelFor="@id/EditText2"
-                android:text="Password"
-                android:textStyle="bold" />
+                android:labelFor="@+id/EditText2"
+            android:text="Password"
+            android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/EditText2"
@@ -112,7 +109,6 @@
                 android:minHeight="48dp"
                 android:padding="8dp" />
 
-
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="10dp" />
@@ -122,14 +118,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
-                android:labelFor="@id/EditText2"
-                android:text="Verify your password"
-                android:textStyle="bold" />
+                android:labelFor="@+id/signup_retype_password"
+            android:text="Verify your password"
+            android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/signup_retype_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginTop="16dp"
                 android:drawableEnd="@drawable/password_icon"
                 android:hint="Re-type Password"
@@ -144,15 +140,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
-                android:labelFor="@id/EditText2"
-                android:text="Birthdate"
-                android:textStyle="bold" />
+                android:labelFor="@+id/signup_birthdate"
+            android:text="Birthdate"
+            android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/signup_birthdate"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/signup_retype_password"
+                android:layout_height="48dp"
                 android:layout_marginTop="16dp"
                 android:drawableEnd="@drawable/calendar"
                 android:hint="Enter your Birthdate"
@@ -167,19 +162,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
-                android:labelFor="@id/EditText2"
+                android:labelFor="@+id/Edithint"
                 android:text="Hint"
-                android:textStyle="bold" />
+            android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/Edithint"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/signup_retype_password"
+                android:layout_height="48dp"
                 android:layout_marginTop="16dp"
                 android:drawableEnd="@drawable/hinticon"
                 android:hint="What is your nickname?"
-                android:inputType="date" />
+                android:inputType="text" />  <!-- Changed the inputType from date to text -->
 
             <View
                 android:layout_width="wrap_content"
@@ -222,14 +216,3 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,102 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Customer Name -->
+        <TextView
+            android:id="@+id/customerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+        <!-- Customer Email -->
+        <TextView
+            android:id="@+id/customerEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <!-- Mobile Number -->
+        <TextView
+            android:id="@+id/customerMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Number"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <!-- Address -->
+        <TextView
+            android:id="@+id/customerAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <!-- Customer ID -->
+        <TextView
+            android:id="@+id/customerID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer ID"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <!-- Loyalty Points -->
+        <TextView
+            android:id="@+id/loyaltyPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loyalty Points"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <!-- Ledger ID -->
+        <TextView
+            android:id="@+id/ledgerID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ledger ID"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <!-- Outstanding Balance -->
+        <TextView
+            android:id="@+id/outstandingBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Outstanding Balance"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <!-- Eye Information -->
+        <TextView
+            android:id="@+id/eyeCapacityLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Left Eye Capacity"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/eyeCapacityRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Right Eye Capacity"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+    </LinearLayout>
+</ScrollView>

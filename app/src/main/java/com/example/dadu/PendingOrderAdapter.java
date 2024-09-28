@@ -43,11 +43,11 @@ public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapte
             holder.btnMakePayment.setVisibility(View.GONE);
         }
 
-        // Payment button click listener
+        // Individual Payment button click listener (not required for all payments button)
         holder.btnMakePayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.makePayment(order);
+                activity.makePayment(order);  // Individual order payment processing
             }
         });
 
@@ -63,6 +63,11 @@ public class PendingOrderAdapter extends RecyclerView.Adapter<PendingOrderAdapte
     @Override
     public int getItemCount() {
         return pendingOrders.size();
+    }
+
+    // Method to return all pending orders
+    public List<Order> getPendingOrders() {
+        return pendingOrders;
     }
 
     static class OrderViewHolder extends RecyclerView.ViewHolder {

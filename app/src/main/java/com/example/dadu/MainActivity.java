@@ -14,8 +14,6 @@ import android.widget.Toast;
 import androidx.core.view.ViewCompat;
 import android.widget.CheckBox;
 import androidx.core.view.WindowInsetsCompat;
-import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 

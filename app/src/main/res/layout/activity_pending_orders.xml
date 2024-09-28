@@ -2,7 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background2">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -10,8 +11,16 @@
         android:layout_height="wrap_content"
         android:background="@color/purple_Dark"
         android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintBottom_toTopOf="@id/tvPendingOrdersTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333"
         tools:ignore="MissingConstraints">
 
 
@@ -20,9 +29,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginStart="16dp"
             android:text="Pending Order"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <ImageButton
@@ -30,11 +40,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
             android:background="?attr/selectableItemBackground"
             android:contentDescription="Cancel"
-            android:src="@drawable/cancel_button"
+            android:src="@drawable/cancelbutton2"
             app:tint="@android:color/white" />
     </androidx.appcompat.widget.Toolbar>
+
     <TextView
         android:id="@+id/tvPendingOrdersTitle"
         android:layout_width="wrap_content"
@@ -43,20 +55,36 @@
         android:textSize="24sp"
         android:layout_margin="16dp"
         android:textStyle="bold"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- RecyclerView for pending orders -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPendingOrders"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/tvPendingOrdersTitle"
-        app:layout_constraintBottom_toTopOf="@id/btnMakePayment"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <!-- Make Payment Button -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_pending_orders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/btnMakePayment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPendingOrdersTitle"
+        app:layout_constraintVertical_bias="0.642" />
+
     <Button
         android:id="@+id/btnMakePayment"
         android:layout_width="wrap_content"
@@ -65,9 +93,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
-    <!-- Cancel Order Button -->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
