@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -37,8 +38,9 @@ public class SignupActivity extends AppCompatActivity {
     private EditText leftEyeCapacityEditText;
     private EditText rightEyeCapacityEditText;
     private Button signupButton;
+    private TextView haveanaccount;
 
-    @SuppressLint("WrongViewCast")
+    @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,9 +57,17 @@ public class SignupActivity extends AppCompatActivity {
         passwordEditText = findViewById(id.EditText2);
         retypePasswordEditText = findViewById(id.signup_retype_password);
         birthdateEditText = findViewById(id.signup_birthdate);
-
+        haveanaccount = findViewById(R.id.haveanAccount);
         signupButton = findViewById(id.signup_button);
 
+        haveanaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignupActivity.this , MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         // Set click listener for the Sign Up button
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override

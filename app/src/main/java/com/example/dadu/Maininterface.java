@@ -71,9 +71,9 @@ public class Maininterface extends AppCompatActivity {
                 editor.apply();
 
                 // Navigate to MainActivity (login screen)
-                Intent intent4 = new Intent(Maininterface.this, MainActivity.class);
-                intent4.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // Clear back stack
-                startActivity(intent4);
+                Intent logoutIntent = new Intent(Maininterface.this, MainActivity.class);
+                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(logoutIntent);
                 finish();  // Close the current activity
             }
         });

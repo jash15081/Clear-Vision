@@ -1,10 +1,14 @@
 package com.example.dadu;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class CustomerProfileActivity extends AppCompatActivity {
 
@@ -12,27 +16,43 @@ public class CustomerProfileActivity extends AppCompatActivity {
             customerID, loyaltyPoints, ledgerID, outstandingBalance,
             eyeCapacityLeft, eyeCapacityRight;
 
+    private ImageButton cancelbtn;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_profile);
 
-        // Initialize views
-        customerName = findViewById(R.id.customerName);
-        customerEmail = findViewById(R.id.customerEmail);
-        customerMobile = findViewById(R.id.customerMobile);
-        customerAddress = findViewById(R.id.customerAddress);
-        customerID = findViewById(R.id.customerID);
-        loyaltyPoints = findViewById(R.id.loyaltyPoints);
-        ledgerID = findViewById(R.id.ledgerID);
-        outstandingBalance = findViewById(R.id.outstandingBalance);
-        eyeCapacityLeft = findViewById(R.id.eyeCapacityLeft);
-        eyeCapacityRight = findViewById(R.id.eyeCapacityRight);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
+        // Initialize views
+        customerName = findViewById(R.id.nameTextView);
+        customerEmail = findViewById(R.id.emailTextView);
+        customerMobile = findViewById(R.id.mobileTextView);
+        customerAddress = findViewById(R.id.addressTextView);
+        customerID = findViewById(R.id.customerIDTextView);
+        loyaltyPoints = findViewById(R.id.loyaltyPointsTextView);
+        ledgerID = findViewById(R.id.ledgerIDTextView);
+        outstandingBalance = findViewById(R.id.outstandingBalanceTextView);
+        eyeCapacityLeft = findViewById(R.id.leftEyeCapacityTextView);
+        eyeCapacityRight = findViewById(R.id.rightEyeCapacityTextView);
+        cancelbtn = findViewById(R.id.cancel_button4);
         // Load customer data
         loadCustomerData();
+
+        cancelbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CustomerProfileActivity.this,Maininterface.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
+
 
     private void loadCustomerData() {
         // Assume we're using SharedPreferences to store customer info, you can replace this with your database query
@@ -65,7 +85,7 @@ public class CustomerProfileActivity extends AppCompatActivity {
             eyeCapacityLeft.setText("Left Eye: 2.0");
             eyeCapacityRight.setText("Right Eye: 2.2");
         } else {
-            // Default case for other customers or new logins
+
             customerName.setText("Unknown Customer");
             customerEmail.setText(email);
             customerMobile.setText("Not available");
