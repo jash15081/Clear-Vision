@@ -24,12 +24,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please wait while logging..."
+        android:text="Please wait while Logging..."
         android:textStyle="bold"
         android:fontFamily="sans-serif-medium"
-        android:textSize="16sp"
+        android:textSize="22sp"
         android:layout_below="@id/progressBar"
         android:layout_centerInParent="true"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white" />
 
 </RelativeLayout>

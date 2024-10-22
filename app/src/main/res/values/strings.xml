@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name"> </string>
+    <string name="app_name">Clear Vision</string>
     <string name="hello_world">Hello World</string>
     <string name="language_hindi">Hindi</string>
     <string name="language_french">French</string>

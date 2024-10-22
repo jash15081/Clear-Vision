@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the Main Interface Activity
-                Intent intent = new Intent(SplashActivity.this, Maininterface.class);
+                Intent intent = new Intent(SplashActivity1.this, MainActivity.class);
                 startActivity(intent);
                 finish();  // Close SplashActivity
             }

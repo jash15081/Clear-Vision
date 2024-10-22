@@ -64,17 +64,16 @@ public class Maininterface extends AppCompatActivity {
         logoutimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Clear login state in SharedPreferences
-                SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("isLoggedIn", false);  // Clear the login flag
-                editor.apply();
-
-                // Navigate to MainActivity (login screen)
                 Intent logoutIntent = new Intent(Maininterface.this, MainActivity.class);
-                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(logoutIntent);
-                finish();  // Close the current activity
+                finish();
+
+//                SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE);
+//                SharedPreferences.Editor editor = sharedPreferences.edit();
+//                editor.putBoolean("isLoggedIn", false);  // Clear the login flag
+//                editor.apply();
+
             }
         });
     }

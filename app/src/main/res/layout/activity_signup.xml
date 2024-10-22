@@ -135,23 +135,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="10dp" />
 
+
+
             <TextView
                 android:id="@+id/birthdate1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
-                android:labelFor="@+id/signup_birthdate"
-            android:text="Birthdate"
-            android:textStyle="bold" />
+                android:text="Birthdate"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/signup_birthdate"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="16dp"
-                android:drawableEnd="@drawable/calendar"
                 android:hint="Enter your Birthdate"
-                android:inputType="date" />
+                android:inputType="date"
+                android:drawableEnd="@drawable/calendar"
+            android:drawablePadding="8dp"
+                android:paddingEnd="12dp" />
+
 
             <View
                 android:layout_width="wrap_content"
@@ -173,8 +177,7 @@
                 android:layout_marginTop="16dp"
                 android:drawableEnd="@drawable/hinticon"
                 android:hint="What is your nickname?"
-                android:inputType="text" />  <!-- Changed the inputType from date to text -->
-
+                android:inputType="text" />
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="10dp" />
